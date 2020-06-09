@@ -6,7 +6,9 @@ const app = express()
 //settings
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
-// app.set('static', path.join(__dirname, 'public'));
+
+//middlewares
+app.use(express.static('public'))
 
 app.listen(4000)
 app.use(routes)
