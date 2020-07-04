@@ -2,4 +2,27 @@ extends ./layout/index
 
 
 block contenido
-    h1 Nosotros
+   main.container.mt-5
+        .row
+            .col-md-5
+                img(src="img/nosotros.jpg", alt="nosotros imagen" class="img-fluid")
+            .col-md-7
+                h1= pagina
+                blockquote Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda soluta dicta unde quam, reiciendis vitae, quisquam consequuntur sit dolor quaerat eum aperiam perferendis voluptatum architecto repellendus. Sed libero eaque tenetur!
+                p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, excepturi.
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dicta. 
+   .listado-iconos  
+    .container.mt-5.py-5.text-center
+     .row
+        .col-md-4
+            img(src="img/icono_seguridad.svg", alt="icono de seguridad" class="img-fluid mb-4")
+            h2.mb-4 Seguridad
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, incidunt
+        .col-md-4
+            img(src="img/icono_destinos.svg", alt="icono de seguridad" class="img-fluid mb-4")
+            h2.mb-4 Mejores destinos
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, incidunt
+        .col-md-4
+            img(src="img/icono_precios.svg", alt="icono de seguridad" class="img-fluid mb-4")
+            h2.mb-4  mejores precios
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, incidunt

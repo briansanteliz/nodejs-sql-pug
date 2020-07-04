@@ -7,7 +7,9 @@ routes.get('/', (req,res)=>{
 })
 
 routes.get('/nosotros', (req,res)=>{
-    res.render('nosotros')
+    res.render('nosotros', {
+        pagina: 'Sobre Nosotros' //propiedades a la vista
+    })
 })
 
 module.exports = routes
