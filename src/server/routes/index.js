@@ -15,7 +15,7 @@ routes.get("/viajes", async (req, res) => {
   try {
     const viajes = await Viaje.findAll();
     res.render("viajes", {
-      pagina: "Los mejores viajes",
+      pagina: "Próximos Viajes",
       viajes,
     });
   }catch{
