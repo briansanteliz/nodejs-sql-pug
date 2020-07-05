@@ -1,4 +1,4 @@
-//Archivo de configuracion de sequelize
+//Archivo de conexión de sequelize
 const Sequelize = require('sequelize')
 
 module.exports = new Sequelize('agenciaviajes', 'root', '', {

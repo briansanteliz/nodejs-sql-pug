@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 //conexion a la bd
 const db =  require('../configs/database')
 
-//modelo de la BD
+//modelo de la BD viaje
 const Viaje = db.define('viaje', {
     titulo:{
         type: Sequelize.STRING
