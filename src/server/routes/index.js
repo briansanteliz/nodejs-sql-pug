@@ -40,4 +40,21 @@ routes.get("/testimonios", (req, res) => {
   });
 });
 
+//se ejecuta cuando se envia el formulario
+routes.post("/testimonios", (req, res) => {
+ const {nombre, correo, mensaje} = req.body;
+ let error = [];
+ //valida los campos
+  if(nombre.trim() === '' || correo.trim() === '' || mensaje.trim() === ''){
+    //agrega un mensaje en caso hay error
+    error.push({mensaje: 'Todos los campos son obligatorios'})
+  }
+  //revisa el arreglo error
+  if(error.length > 0){
+    //muestra un error en la vista
+  }else{
+    //almacena en la bd
+  }
+});
+
 module.exports = routes;

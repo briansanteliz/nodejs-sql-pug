@@ -9,7 +9,7 @@ block contenido
 
                 .row.justify-content-center
                     .col-md-8
-                        form
+                        form(action="/testimonios", method="POST")
                             .form-group
                                 label(for="nombre") Nombre:
                                 input(type="text", class="form-control" name="nombre" id="nombre" placeholder="Escribe tu nombre")

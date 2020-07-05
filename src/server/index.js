@@ -9,11 +9,13 @@ const app = express();
 //settings
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
-app.set("port", process.env.port || 4000);
+app.set("port", process.env.PORT || 4000);
 
 //middlewares
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(morgan("dev"));
+app.use(express.json()) //entiende archivos json
+app.use(express.urlencoded({extended:true})) //entiende datos enviandos desde el form
 
 //Configura el nombre del sitio basando en el entorno
 const settings = configs[app.get("env")];
