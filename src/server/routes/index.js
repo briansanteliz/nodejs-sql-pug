@@ -34,5 +34,10 @@ routes.get("/viajes/:id", async (req, res) => {
     throw new Error("ha ocurrido un error");
   }
 });
+routes.get("/testimonios", (req, res) => {
+  res.render("testimonios", {
+    pagina: "Testimoniales", //propiedades a la vista
+  });
+});
 
 module.exports = routes;

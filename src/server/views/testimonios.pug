@@ -1,0 +1,22 @@
+extends ./layout/index
+
+
+block contenido
+   main.container.mt-5
+        h1.mb-5.text-center= pagina
+        .row
+            .col-md-12
+
+                .row.justify-content-center
+                    .col-md-8
+                        form
+                            .form-group
+                                label(for="nombre") Nombre:
+                                input(type="text", class="form-control" name="nombre" id="nombre" placeholder="Escribe tu nombre")
+                            .form-group
+                                label(for="email") Email:
+                                input(type="email", class="form-control" name="email" id="email" placeholder="Escribe tu Correo Electrónico")
+                            .form-group
+                                label(for="mensaje") Mensaje:
+                                textarea#mensaje(name="mensaje", class="form-control", placeholder="Escribe tu Mensaje" rows="3" class="form-control")
+                            input.btn.btn-block.btn-success(type="submit")
