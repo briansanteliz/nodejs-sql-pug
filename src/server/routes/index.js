@@ -18,8 +18,20 @@ routes.get("/viajes", async (req, res) => {
       pagina: "Próximos Viajes",
       viajes,
     });
-  }catch{
-      throw new Error('ha ocurrido un error')
+  } catch {
+    throw new Error("ha ocurrido un error");
+  }
+});
+
+routes.get("/viajes/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const viaje = await Viaje.findOne({ where: { id } });
+    res.render("viaje-unico", {
+      viaje,
+    });
+  } catch  {
+    throw new Error("ha ocurrido un error");
   }
 });
 
