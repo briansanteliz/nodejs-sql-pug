@@ -6,17 +6,18 @@ block contenido
         h1.mb-5.text-center= pagina
         .row
             .col-md-12
+               
 
                 .row.justify-content-center
                     .col-md-8
                         form(action="/testimonios", method="POST")
                             .form-group
                                 label(for="nombre") Nombre:
-                                input(type="text", class="form-control" name="nombre" id="nombre" placeholder="Escribe tu nombre")
+                                input(type="text", class="form-control", name="nombre", value= name, id="nombre",placeholder="Escribe tu nombre")
                             .form-group
                                 label(for="email") Email:
-                                input(type="email", class="form-control" name="correo" id="email" placeholder="Escribe tu Correo Electrónico")
+                                input(type="email", class="form-control",name="correo", id="email", value= correo, placeholder="Escribe tu Correo Electrónico")
                             .form-group
                                 label(for="mensaje") Mensaje:
-                                textarea#mensaje(name="mensaje", class="form-control", placeholder="Escribe tu Mensaje" rows="3" class="form-control")
+                                textarea#mensaje(name="mensaje", class="form-control", placeholder="Escribe tu Mensaje" rows="3" class="form-control")= mensaje
                             input.btn.btn-block.btn-success(type="submit")

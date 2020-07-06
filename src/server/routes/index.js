@@ -46,12 +46,18 @@ routes.post("/testimonios", (req, res) => {
  let error = [];
  //valida los campos
   if(nombre.trim() === '' || correo.trim() === '' || mensaje.trim() === ''){
-    //agrega un mensaje en caso hay error
+    //agrega un mensaje en caso hay error al arreglo 
     error.push({mensaje: 'Todos los campos son obligatorios'})
   }
   //revisa el arreglo error
   if(error.length > 0){
-    //muestra un error en la vista
+    //muestra un error en la vista y los inputs mantiene los values anteriores
+    res.render('testimonios',{
+      error,
+      name:nombre,
+      correo,
+      mensaje
+    })
   }else{
     //almacena en la bd
   }
