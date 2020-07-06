@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const Viaje = require("../../models/Viajes");
+const Testimonios = require("../../models/Testimoniales");
 const routes = Router();
 
 routes.get("/", (req, res) => {
@@ -41,26 +42,33 @@ routes.get("/testimonios", (req, res) => {
 });
 
 //se ejecuta cuando se envia el formulario
-routes.post("/testimonios", (req, res) => {
+routes.post("/testimonios", async(req, res) => {
  const {nombre, correo, mensaje} = req.body;
  let error = [];
+ let success = [];
  //valida los campos
   if(nombre.trim() === '' || correo.trim() === '' || mensaje.trim() === ''){
     //agrega un mensaje en caso hay error al arreglo 
     error.push({mensaje: 'Todos los campos son obligatorios'})
+  }else{
+    success.push({mensaje:'Gracias por tu mensaje!'})
+
   }
   //revisa el arreglo error
   if(error.length > 0){
     //muestra un error en la vista y los inputs mantiene los values anteriores
     res.render('testimonios',{
+      success,
       error,
       name:nombre,
       correo,
-      mensaje
+      mensaje,
+    pagina: "Testimoniales"
     })
   }else{
     //almacena en la bd
+    
   }
-});
+}); 
 
 module.exports = routes;

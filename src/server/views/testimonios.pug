@@ -6,7 +6,14 @@ block contenido
         h1.mb-5.text-center= pagina
         .row
             .col-md-12
-               
+                h2.text-center Dejanos un Mensaje!
+                if(error)
+                    each err in error
+                        .alert.alert-danger.text.center= err.mensaje
+                if(success)
+                    each su in success
+                        .alert.alert-success.text.center= su.mensaje
+                            
 
                 .row.justify-content-center
                     .col-md-8
