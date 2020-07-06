@@ -67,7 +67,15 @@ routes.post("/testimonios", async(req, res) => {
     })
   }else{
     //almacena en la bd
-    
+    await Testimonios.create({
+      nombre,
+      correo,
+      mensaje
+    })
+     res.render('testimonios',{
+    success
+
+     })
   }
 }); 
 
