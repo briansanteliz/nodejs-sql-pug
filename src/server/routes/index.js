@@ -5,7 +5,7 @@ const routes = Router();
 let success= [];
 
 routes.get("/", (req, res) => {
-  res.render("index");
+  res.render("index",{home:'home'});
 });
 
 routes.get("/nosotros", (req, res) => {
