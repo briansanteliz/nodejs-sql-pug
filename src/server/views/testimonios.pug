@@ -4,16 +4,31 @@ extends ./layout/index
 block contenido
    main.container.mt-5
         h1.mb-5.text-center= pagina
+
         .row
+           
+            .col-md-12
+                if(resp)
+                    blockquote.text-center.text-capitalize Lo Que nuestros Clientes dicen
+                    .row.testimoniales
+                        each testimonial in resp
+                            .col-md-6.col-lg-4.mb-4
+                                .card
+                                    .card-body
+                                        blockquote.blockquote
+                                            p.mb-0
+                                                | #{testimonial.mensaje}
+                                            footer.blockquote-footer
+                                                | #{testimonial.nombre}
+
             .col-md-12
                 h2.text-center Dejanos un Mensaje!
                 if(error)
                     each err in error
                         .alert.alert-danger.text.center= err.mensaje
                 if(success)
-                    each su in success
-                        .alert.alert-success.text.center= su.mensaje
-                            
+                    each men in success
+                        .alert.alert-success.text.center= men.mensaje
 
                 .row.justify-content-center
                     .col-md-8
