@@ -4,8 +4,19 @@ const Testimonios = require("../../models/Testimoniales");
 const routes = Router();
 let success= [];
 
-routes.get("/", (req, res) => {
-  res.render("index",{home:'home'});
+routes.get("/",  async(req, res) => {
+  try {
+    const viajes = await Viaje.findAll({
+      limit:3
+    });
+    res.render("index", {
+      pagina: "Próximos Viajes",
+      viajes,
+      home:'home'
+    });
+  } catch {
+    throw new Error("ha ocurrido un error");
+  }
 });
 
 routes.get("/nosotros", (req, res) => {
