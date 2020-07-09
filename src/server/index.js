@@ -25,6 +25,8 @@ app.locals.nombre = settings.nombre;
 app.use((req, res, next) => {
   const fecha = new Date();
   res.locals.fecha = fecha.getFullYear();
+  //obtiene la ruta actual
+  res.locals.ruta = req.path;
   next();
 });
 
