@@ -8,18 +8,7 @@ block contenido
         .row
            
             .col-md-12
-                if(resp)
-                    blockquote.text-center.text-capitalize Lo Que nuestros Clientes dicen
-                    .row.testimoniales
-                        each testimonial in resp
-                            .col-md-6.col-lg-4.mb-4
-                                .card
-                                    .card-body
-                                        blockquote.blockquote
-                                            p.mb-0
-                                                | #{testimonial.mensaje}
-                                            footer.blockquote-footer
-                                                | #{testimonial.nombre}
+                include ./layout/includes/testimonios
 
             .col-md-12
                 h2.text-center Dejanos un Mensaje!
