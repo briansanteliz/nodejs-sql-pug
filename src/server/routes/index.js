@@ -12,7 +12,6 @@ routes.get("/nosotros", nosotrosController);
 routes.get("/viajes", viajesController.viajes);
 routes.get("/viajes/:id", viajesController.viajeUnico);
 routes.get("/testimonios", testimoniosController.testimonioGet);
-//se ejecuta cuando se envia el formulario
 routes.post("/testimonios", testimoniosController.testimonioPost);
 
 module.exports = routes;
