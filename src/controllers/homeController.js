@@ -10,7 +10,7 @@ exports.home = async (req, res) => {
       limit: 3,
     });
     res.render("index", {
-      pagina: "Próximos Viajes",
+      pagina: "La mejor Agencia Para ti",
       viajes,
       home: "home",
       resp,
