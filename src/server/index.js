@@ -10,6 +10,7 @@ const app = express();
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 app.set("port", process.env.PORT || 4000);
+app.set("host", process.env.HOST || '0.0.0.0')
 
 //middlewares
 app.use(express.static(path.join(__dirname, "../public")));
@@ -30,7 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(app.get("port"), () => {
+app.listen(app.get("port"),app.get("host"), () => {
   console.log(`Server en el puerto ${app.get("port")}`);
 });
 db.authenticate()
