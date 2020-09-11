@@ -2,7 +2,7 @@
 const Sequelize = require('sequelize')
 //lee variables de entorno
 const dotenv = require('dotenv')
-dotenv.config()
+dotenv.config({path:'entorno.env'})
 
 module.exports = new Sequelize(process.env.BD_NOMBRE, process.env.BD_USUARIO, process.env.BD_PASS, {
     host: process.env.HOST,
