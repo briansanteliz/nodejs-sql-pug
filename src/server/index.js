@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true })); //entiende datos enviandos desd
 
 //Configura el nombre del sitio basando en el entorno
 const settings = configs[app.get("env")];
-app.locals.nombre = settings.nombre;
+app.locals.entorno = settings.nombre;
 
 //Muestra el año actual middleware
 app.use((req, res, next) => {
