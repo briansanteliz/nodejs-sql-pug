@@ -7,8 +7,8 @@
     "dev": "nodemon src/server",
     "start": "node src/server"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["NodeJS", "Pug", "Backend"],
+  "author": "Brian Santeliz",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
